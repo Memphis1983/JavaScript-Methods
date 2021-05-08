@@ -271,9 +271,9 @@ console.log(animaux);
 Output: ["abeille", "chat", "écureuill", "zèbree"];
 ```
 
-6. slice
-   The slice() method returns the selected elements in an array, as a new array object.
-   The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+6. slice()
+   The slice method returns the selected elements in an array, as a new array object.
+   The slice method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
 
 **Example 1**: Slice the given string into a new string starting from index
 18 - 27 (27-1)
@@ -301,14 +301,112 @@ console.log(midNums);
 // Expected output: [45, 56]
 ```
 
-7. pop
-8. shift
-9. push
-10. unshift
-11. includes
-12. indexOf
-13. every
+7. pop()
+   The arr.pop() method is used to remove the last element of the array and also returns the removed element. This function decreases the length of the array by 1.
 
+**Example**: Remove the last element from the array
+
+```javascript
+let array = [10, 20, 30, 40, 50];
+let removedArr = array.pop();
+console.log(removedArr);
 ```
 
+8. shift()
+   Javascript array shift()method removes the first element from an array and returns that element.
+
+**Example**:
+
+```javascript
+let names = ["Blaire", "Ash", "Coco", "Dean", "Georgia"];
+let initalElem = names.shift();
+console.log(names);
+Output: ["Ash", "Coco", "Dean", "Georgia"];
+console.log(initialElem);
+Output: Blaire;
+```
+
+9. push()
+   The push() method adds one or more elements to the end of an array and returns the new length of the array.
+
+**Example**:
+
+```javascript
+var array = [];
+array.push(10, 20, 30, 40, 50, 60, 70);
+console.log(array);
+Output: [10, 20, 30, 40, 50, 60, 70];
+```
+
+10. unshift()
+    The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+**Example**:
+
+```javascript
+let names = ["Leon"];
+names.unshift("Little Leon", "Bob", "John", "Nuns");
+console.log(names);
+Output: ["Little Leon", "Bob", "John", "Nuns", "Leon"];
+```
+
+11. includes()
+    The includes() method determines whether one string may be found within another string, returning true or false as appropriate.
+
+**Example**:
+
+```javascript
+let string = "Welcome to Learn with Leon";
+let check = string.includes("Leon");
+console.log(check);
+Output: true;
+```
+
+12. indexOf()
+    indexOf() we returns the first index at which a given element can be found in the array, or -1 if it is not present
+
+**Example 1**: Check elements in an array, add if it doesn't exit and report if it does
+
+```javascript
+function updateVegetablesCollection(veggies, veggie) {
+  <br />; // do we have a veggie by id of -1 ? (means does not exist)
+  if (veggies.indexOf(veggie) === -1) {
+    // add it to array if not
+    veggies.push(veggie);
+    console.log("New veggies collection is : " + veggies);
+    // already exists? report it then
+  } else if (veggies.indexOf(veggie) > -1) {
+    console.log(veggie + " already exists in the veggies collection.");
+  }
+}
+
+var veggies = ["potato", "tomato", "chillies", "green-pepper"];
+```
+
+**Example 2**: Check statenames in US
+
+```javascript
+function elementExists() {
+  const selectedState = document.getElementById("selectstate").value;
+  const USStates = ["New York", "Texas", "Florida", "Alaska"];
+  let arrSearch;
+  arrSearch = USStates.indexOf(selectedState);
+  if (arrsearch != -1) {
+    alert("The State exist in Array and its index is: " + arrsearch);
+  } else {
+    alert("The State does not exist in array!");
+  }
+}
+```
+
+13. every()
+    JavaScript array every method tests whether all the elements in an array passes the test implemented by the provided function.
+
+**Example**:
+
+```javascript
+const isBelowThreshold = (currentValue) => currentValue < 40;
+const array1 = [1, 30, 39, 29, 10, 13];
+console.log(array1.every(isBelowThreshold));
+// expected output: true
 ```
