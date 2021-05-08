@@ -1,4 +1,4 @@
-### Please research the following methods:
+### JavaScript Methods & Examples:
 
 ---
 
@@ -149,7 +149,7 @@ const names = ["Victoria", "Pearl", "Olivia", "Annabel", "Sandra", "Sarah"];
 const filterItems = (letters) => {
   return names.filter((name) => name.indexOf(letters) > -1);
 
-  console.log(filterItems("ia")); // ["Victoria", "Olivia"]
+  console.log(filterItems("i")); // ["Victoria", "Olivia"]
 };
 ```
 
@@ -196,7 +196,66 @@ Output: ["Hello John", "Hello Sara", "Hello Jack"];
 ```
 
 5. sort()
-   We can sort the elements of an array easily with a sort() method.
+   We can reorganize a given array into one in which the elements are presented in ascending order.
+
+**Example 1**: Sorting strings in ascending order
+
+```javascript
+const fruits = ["peach", "mango", "banana", "strawberry", "apple"];
+fruits.sort();
+console.log(fruits);
+Output: ["apple", "banana", "mango", "peach", "strawberry"];
+```
+
+**Example 2**: sorting numbers
+
+```javascript
+let numbers = [0, 1, 2, 3, 10, 20, 30];
+numbers.sort();
+console.log(numbers);
+
+Output: [0, 1, 10, 2, 20, 3, 30];
+```
+
+> In this example, the sort() method places 10 before 2 because the string “10” comes before “2” when doing a string comparison.
+> To fix this, you need to pass a compare function to the sort() method. The sort() method will use the compare function to determine the orders of elements.
+
+```javascript
+let numbers = [0, 1, 2, 3, 10, 20, 30];
+numbers.sort(function (a, b) {
+  if (a > b) return 1;
+  if (a < b) return -1;
+  return 0;
+});
+console.log(numbers);
+```
+
+**Example 3**: Sort an array of strings in descending order
+
+```javascript
+let animals = ["cat", "dog", "elephant", "bee", "ant"];
+animals.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+  return 0;
+});
+console.log(animals);
+
+Output: ["elephant", "dog", "cat", "bee", "ant"];
+```
+
+> Suppose you have an array that contains elements in both uppercase and lowercase
+> To sort this array alphabetically, you need to use a custom compare function to convert all elements to the same case e.g., uppercase for comparison and pass that function to the sort() method. **_like so_**:
+
+```javascript
+let mixedCaseAnimals = ["Cat", "dog", "Elephant", "bee", "ant"];
+
+mixedCaseAnimals.sort(function (a, b) {
+  let x = a.toUpperCase(),
+    y = b.toUpperCase();
+  return x == y ? 0 : x > y ? 1 : -1;
+});
+```
 
 6. slice
 7. pop
