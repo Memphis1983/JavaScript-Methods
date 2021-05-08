@@ -257,7 +257,50 @@ mixedCaseAnimals.sort(function (a, b) {
 });
 ```
 
+**Example 4**: Sorting an array of strings with non-ASCII characters
+
+> for the strings with non-ASCII characters e.g., é, è, etc., the sort() method will not work correctly, to resolve this we must use the **localCompare()**
+
+```javascript
+let animaux = ["zèbre", "abeille", "écureuil", "chat"];
+animaux.sort((a, b) => {
+  return a.localeCompare(b);
+});
+console.log(animaux);
+
+Output: ["abeille", "chat", "écureuill", "zèbree"];
+```
+
 6. slice
+   The slice() method returns the selected elements in an array, as a new array object.
+   The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+
+**Example 1**: Slice the given string into a new string starting from index
+18 - 27 (27-1)
+
+```javascript
+let string = "Tesla, Solarcity, Neuralink, Spacex";
+var newString = string.slice(18, 27);
+console.log(newString);
+//Output: Neuralink;
+```
+
+**Example 2**: Select elements from an array
+
+```javascript
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1, 3);
+```
+
+**Example 3**: Negative index - It is possible to provide negative numbers as either argument for the slice() method. When negative numbers are provided, the index count begins from the end of the Array or String.
+
+```javascript
+const nums = [1, 23, 45, 56, 64, 102];
+const midNums = nums.slice(2, -2);
+console.log(midNums);
+// Expected output: [45, 56]
+```
+
 7. pop
 8. shift
 9. push
@@ -265,3 +308,7 @@ mixedCaseAnimals.sort(function (a, b) {
 11. includes
 12. indexOf
 13. every
+
+```
+
+```
