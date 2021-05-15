@@ -113,6 +113,8 @@ const groupedResult = result.reduce((accumulator, current) => {
 console.log(groupedResult);
 ```
 
+---
+
 3. filter
    The filter() method creates a new array with all elements that pass the test implemented by the provided function. It does not mutate the original array
 
@@ -152,6 +154,8 @@ const filterItems = (letters) => {
   console.log(filterItems("i")); // ["Victoria", "Olivia"]
 };
 ```
+
+---
 
 4. forEach
    The forEach() method calls a function once for each element in an array, in order.
@@ -194,6 +198,8 @@ console.log(students);
 
 Output: ["Hello John", "Hello Sara", "Hello Jack"];
 ```
+
+---
 
 5. sort()
    We can reorganize a given array into one in which the elements are presented in ascending order.
@@ -271,6 +277,8 @@ console.log(animaux);
 Output: ["abeille", "chat", "écureuill", "zèbree"];
 ```
 
+---
+
 6. slice()
    The slice method returns the selected elements in an array, as a new array object.
    The slice method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
@@ -301,16 +309,42 @@ console.log(midNums);
 // Expected output: [45, 56]
 ```
 
+---
+
 7. pop()
    The arr.pop() method is used to remove the last element of the array and also returns the removed element. This function decreases the length of the array by 1.
 
-**Example**: Remove the last element from the array
+**Example 1**: Remove the last element from the array
 
 ```javascript
 let array = [10, 20, 30, 40, 50];
 let removedArr = array.pop();
 console.log(removedArr);
 ```
+
+**Example 2**:
+
+```js
+const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+console.log(plants.pop());
+// expected output: "tomato"
+```
+
+**Example 3**:
+
+```js
+function func() {
+  var arr = ["Bob", "Evil John", "Simba", "Machi"];
+
+  // Popping the last element from the array
+  document.write(arr.pop());
+}
+
+func();
+Output: Machi;
+```
+
+---
 
 8. shift()
    Javascript array shift()method removes the first element from an array and returns that element.
@@ -326,10 +360,12 @@ console.log(initialElem);
 Output: Blaire;
 ```
 
+---
+
 9. push()
    The push() method adds one or more elements to the end of an array and returns the new length of the array.
 
-**Example**:
+**Example 1**:
 
 ```javascript
 var array = [];
@@ -338,10 +374,52 @@ console.log(array);
 Output: [10, 20, 30, 40, 50, 60, 70];
 ```
 
+**Example 2**:
+
+```js
+let array = ["Mobile", "Earphones", "Laptop", "Charger"];
+document.getElementById("demo").innerHTML = "Array before function calling :: " + array;
+
+  removed_item = array.shift();
+
+ document.getElementById("demo1").innerHTML = "Array shift() removed item :: " + removed_item;
+ document.getElementById("demo2").innerHTML = "Array after function calling :: " + array;
+
+ Output:
+ Array before function calling: Mobile, Earphones, Laptop, Charger
+ Arrya.shift() removed item: Mobile
+ Array after function calling Earphones, Laptop, Charger
+```
+
+**Example 3**: Usage of shift() method in while loop
+
+> We use the array shift() method inside while loop when we want to check a specific condition using the function shift().
+
+```js
+removed_item = "";
+
+    let array = ["Mobile", "Earphones", "Laptop", "Charger"];
+    while( (i = array.shift()) !== undefined ) {
+        removed_item += "<br>" + i + " Removed ";
+    }
+
+    document.getElementById("demo").innerHTML = "Array shift() removed items :: " + removed_item;
+
+Output: Array shift() removed items:
+Mobile Removed
+Earphones Removed
+Laptop Removed
+Charger Removed
+```
+
+> In the above example, we call the array shift() function inside the while loop condition. It removes each item of the array one by one because the loop will execute while the array becomes empty.
+
+---
+
 10. unshift()
     The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
 
-**Example**:
+**Example 1**:
 
 ```javascript
 let names = ["Leon"];
@@ -350,10 +428,46 @@ console.log(names);
 Output: ["Little Leon", "Bob", "John", "Nuns", "Leon"];
 ```
 
+**Example 2**:
+
+```js
+const array1 = [1, 2, 3];
+
+console.log(array1.unshift(4, 5));
+Output: 5;
+
+console.log(array1);
+Output: Array[(4, 5, 1, 2, 3)];
+```
+
+**Example 3**:
+
+```js
+function func() {
+
+    // Original array
+    var array = ["Bob", "Evil John", "Simba", "Machi"];
+
+    // Checking for condition in array
+    var value = array.unshift("Learn with Leon");
+
+    document.write(value);
+    document.write("<br />");
+    document.write(array);
+}
+
+func();
+
+Output: 5
+Learn with Leon, Bob, Evil John, Simba, Machi
+```
+
+---
+
 11. includes()
     The includes() method determines whether one string may be found within another string, returning true or false as appropriate.
 
-**Example**:
+**Example 1**:
 
 ```javascript
 let string = "Welcome to Learn with Leon";
@@ -361,6 +475,26 @@ let check = string.includes("Leon");
 console.log(check);
 Output: true;
 ```
+
+**Example 2**: Check if a string includes "world":
+
+```js
+var str = "Hello world, welcome to the universe.";
+var n = str.includes("world");
+
+Output: true;
+```
+
+**Example 3**:
+
+```js
+const pets = ["cat", "dog", "bat"];
+
+console.log(pets.includes("cat"));
+Output: true;
+```
+
+---
 
 12. indexOf()
     indexOf() we returns the first index at which a given element can be found in the array, or -1 if it is not present
@@ -399,10 +533,20 @@ function elementExists() {
 }
 ```
 
+**Example 3**: Search a string for "welcome":
+
+```js
+var str = "Hello world, welcome to the universe.";
+var n = str.indexOf("welcome");
+Output: 13;
+```
+
+---
+
 13. every()
     JavaScript array every method tests whether all the elements in an array passes the test implemented by the provided function.
 
-**Example**:
+**Example 1**:
 
 ```javascript
 const isBelowThreshold = (currentValue) => currentValue < 40;
@@ -410,3 +554,35 @@ const array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(isBelowThreshold));
 // expected output: true
 ```
+
+**Example 2**: Check if all the values in the ages array are 18 or over:
+
+```js
+var ages = [32, 33, 16, 40];
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.every(checkAdult);
+}
+
+Output: false;
+```
+
+**Example 3**: Let's check the marks of a student.
+
+```js
+var marks = [50, 40, 45, 37, 20];
+
+function check(value) {
+  return value > 30; //return false, as marks[4]=20
+}
+
+document.writeln(marks.every(check));
+
+Output: false;
+```
+
+---
