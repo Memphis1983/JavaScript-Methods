@@ -54,3 +54,4 @@ const sumArray = (arr) => {
     return sum;
 }
 console.log(sumArray([ 1, 1, 11, 2, 3 ]));
+
